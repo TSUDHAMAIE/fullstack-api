@@ -1,10 +1,10 @@
 const express=require("express");
-const app=express();
+const app=express();require("dotenv").config();
 app.use(express.json());//middleware
-const FULL_NAME="john_doe";
-const DOB="17091999";
-const EMAIL="john@xyz.com";
-const ROLL_NUMBER="ABCD123";
+const FULL_NAME = process.env.FULL_NAME;
+const DOB = process.env.DOB;
+const EMAIL = process.env.EMAIL;
+const ROLL_NUMBER = process.env.ROLL_NUMBER;
 const isNumber=(str)=>/^\d+$/.test(str);//check string is number
 const isAlphabet=(str)=>/^[a-zA-Z]+$/.test(str);//check string is alphabet
 function alternatingCaps(arr){
@@ -57,7 +57,7 @@ app.post("/bfhl",(req,res)=>{
     }
 });
 app.get("/",(req,res)=>{res.send("FULL STACK API BY SUDHAMAIE IS RUNNING");});
-const PORT=3000;
+const PORT=process.env.PORT||3000;
 app.listen(PORT,()=>{
     console.log(`Server running on http://localhost:${PORT}`);
 });
