@@ -57,7 +57,4 @@ app.post("/bfhl",(req,res)=>{
     }
 });
 app.get("/",(req,res)=>{res.send("FULL STACK API BY SUDHAMAIE IS RUNNING");});
-const PORT=process.env.PORT||3000;
-app.listen(PORT,()=>{
-    console.log(`Server running on http://localhost:${PORT}`);
-});
+module.exports=app;
